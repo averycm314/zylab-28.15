@@ -29,15 +29,40 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
      // OutputByArtist
    } 
    if (option == 't') {
-     // Output song time
-   } 
-   if (option == 'o') { 
-     // Output full playlist 
-   } 
-   if (option == 'q' ) { 
-     break; 
-     // quit 
-   } 
+      cout << "OUTPUT TOTAL TIME OF PLAYLIST (IN SECONDS)" << endl;
+      int ttime = 0;
+      PlaylistNode* currentNode = headNode;
+
+      while (currentNode != nullptr) {
+         ttime += currentNode->GetSongLength();
+         currentNode = currentNode->GetNext();
+      }
+
+      cout << "Total time: " << ttime << " seconds" << endl;
+   }
+
+   if (option == 'o') {
+      cout << playlistTitle << " - OUTPUT FULL PLAYLIST" << endl;
+      if (headNode == nullptr) {
+         cout << "Playlist is empty" << endl;
+      } 
+      else {
+         int i = 1;
+         PlaylistNode* currentNode = headNode;
+         currentNode = currentNode->GetNext();
+         while (currentNode != nullptr) {
+            cout << i << "." << endl;
+            currentNode->PrintPlaylistNode();
+            currentNode = currentNode->GetNext();
+            i++;
+            if (currentNode != nullptr)
+               cout << endl;
+         }
+      }
+   }
+
+   return headNode;
+}
    
 }
 
