@@ -1,3 +1,7 @@
+//URL for Github repository: 
+//Team member 1: Avery Morris - averycm314
+//Team member 2: Claire Fitzgerald - clairefitzgerald
+
 #include <iostream> 
 using namespace std; 
 
