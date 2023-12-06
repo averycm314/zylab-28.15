@@ -15,7 +15,6 @@ int main() {
    
 }
 PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headNode) {
-   getline(cin, option); 
     if (option == 'a') {
       string userID;
       string userSong;
